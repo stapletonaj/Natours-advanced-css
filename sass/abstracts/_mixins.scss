@@ -11,7 +11,7 @@
     top: 50%;
     left:50%;
     transform: translate(-50%, -50%);
-}
+} 
 
 
 // MEDIA QUERY MANAGER
@@ -37,29 +37,39 @@ $breakpoint argument choices:
 - tab-port
 - tab-land
 - big-desktop
+
+ORDER: 
+Base + Typography
+Gerneral Layout and grid
+page layout
+components
 */
 
+
+
+//we use em instead of rem becuase rems don't work in media queries
+// we calculate ems using this equation: px/16 where 16 is default font size.
 @mixin respond($breakpoint) {
     @if $breakpoint == phone {
-        @media (max-width: 600px) {
+        @media (max-width: 37.5em) { //600px
         @content;
     }
     }
 
     @if $breakpoint == tab-port {
-        @media (max-width: 900px) {
+        @media (max-width: 56.25em) { //900px
         @content;
     }
     }
 
     @if $breakpoint == tab-land {
-        @media (max-width: 1200px) {
+        @media (max-width: 75em) { //1200px
         @content;
     }
     }
 
     @if $breakpoint == big-desktop {
-        @media (min-width: 1800px) {
+        @media (min-width: 112.5em) { //1800px
         @content;
     }
     }
